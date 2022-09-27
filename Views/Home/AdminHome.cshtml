@@ -1,0 +1,40 @@
+@model List<Movie>
+@if(ViewBag.User.UserAdmin == 1) // ketu eshte kushti qe kemi krijuar per adminin si useradmin
+            {
+               
+<div class="jumbotron bg-info text-white text-center">
+    <h1>Welcome @ViewBag.Firstname!</h1>
+    <p class="lead text-muted">This is your Admin Homepage</p>
+</div>
+
+<a href="/movies/all" class="btn btn-outline-info my-2">View all Movies</a>
+<a href="/newmovie" class="btn btn-outline-info my-2">Add Movie to Club</a>
+
+<table class="table border border-secondary">
+    <thead class="bg-secondary text-white">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            @* <th>Description</th> *@
+            <th>Movie Adder</th>
+            <th># of Members Added</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Movie b in Model) // i gjithe ky cikli ketu shton butonin delete per cdo film dhe kjo vlen vetem per adminin
+        {
+            <tr>
+                <td><a href="/movie/@b.MovieId">@b.Title</a></td>
+                <td>@b.Author</td>
+                @* <td>@b.Description</td> *@
+                <td>@b.Adder.Firstname</td>
+                <td>@b.Members.Count</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href="/movie/@b.MovieId/delete">Delete</a>
+                </td>
+            </tr>
+        }    
+    </tbody>
+</table>
+            }

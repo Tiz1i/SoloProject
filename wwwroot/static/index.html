@@ -1,0 +1,321 @@
+<!doctype HTML>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content='text/html; charset=UTF-8' />
+    <meta http-equiv="Cache-Control" content="max-age=200" />
+    <title>Kyle Tsuyemura</title>
+    <link async rel='stylesheet' type='text/css' href='stylesheets/portfolio.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+      <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script async type ='text/javascript' src='javascript/portfolio.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  </head>
+  <body>
+
+  <div id='main'>
+    <ul class="side-nav blue-grey" id="mobile-demo">
+      <li><p class='navlink whitefont center-align navtitle'>Navigation</p></li>
+      <li><div class="divider"></div></li>
+      <li><a class='navlink whitefont aboutbtn' href="#" onclick="$('.button-collapse').sideNav('hide');">About</a></li>
+      <li><a class='navlink whitefont techbtn' href="#" onclick="$('.button-collapse').sideNav('hide');">Technology</a></li>
+      <li><a class='navlink whitefont projbtn' href="#" onclick="$('.button-collapse').sideNav('hide');">Projects</a></li>
+      <li><a class='navlink whitefont contactbtn' href="#" onclick="$('.button-collapse').sideNav('hide');">Contact</a></li>
+    </ul>
+    <div class='navbar-fixed'>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a id='getoutbtn' href="#!" class='blackfont'>Get Out</a></li>
+        <li><a id='forgebtn' href="#!" class='blackfont'>Forge</a></li>
+        <li><a id='mapsharebtn' href="#!" class='blackfont'>Map Share</a></li>
+        <li><a id='iosbtn' href="#!" class='blackfont'>Map Share (iOS)</a></li>
+      </ul>
+      <nav class='noboxshadow banner-hidden'>
+       <div class="nav-wrapper clear">
+         <a href="#" class="brand-logo raleway hide-on-med-and-down">K<span class='tealfont'>Tsuyemura</span></a>
+         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">view_list</i></a>
+         <ul class="right hide-on-med-and-down">
+           <li><a class='navlink blackfont aboutbtn' href="#">About <i class="material-icons left">perm_identity</i></a></li>
+           <li><a class='navlink blackfont techbtn' href="#" >Technology <i class='material-icons left'>settings</i></a></li>
+           <li><a class='navlink blackfont projbtn dropdown-button' href="#" data-activates="dropdown1">Projects <i class="material-icons right">arrow_drop_down</i><i class='material-icons left'>mode_edit</i></a></li>
+           <li><a class='navlink blackfont contactbtn' href="#">Contact <i class="material-icons left">email</i></a></li>
+         </ul>
+
+       </div>
+     </nav>
+    </div>
+    <div id='banner' class="parallax-container">
+      <div class='valign-wrapper'>
+        <div class='valign center-block'>
+          <h1 id='name' class='whitefont center-align raleway banner-hidden'>Kyle Tsuyemura</h1>
+          <h3 id='title' class='tealfont center-align raleway banner-hidden'>Web Developer</h3>
+        </div>
+      </div>
+    <div class="parallax"><img src="images/header.png">
+    </div>
+  </div>
+  <div id='about' class='section container row'>
+    <div class='row container col s12'>
+      <h2 class="header raleway">About Me</h2>
+    </div>
+    <div id='abouttxtdiv' class="row container abtdiv col m12 s12">
+      <ul id='abouttextanimation'>
+        <li class='abouttextscroll'>
+          <p class="abouttext grey-text text-darken-3 lighten-3 raleway">Hello! My name is Kyle and I am a <span class='tealfont'>Full Stack Web Developer</span>, who was until recently studying Electrical Engineering at University of California, Davis. Some friends suggested I try my hand at programming as a change of pace and I instantly fell in love with it. I decided to make the transition into web development and since then I have conquered several stacks of technology. I haven't regretted that decision even for a moment and I'm eager to continue learning more!</p>
+        </li>
+        <li class='abouttextscroll'>
+          <p class="abouttext grey-text text-darken-3 lighten-3 raleway">Aside from coding I have a large passion for music, which is also where my hobbies in dance and DJing stem from. When I'm not doing either of those, you'll probably find me playing video games.</p>
+        </li>
+      </ul>
+
+    </div>
+    <div id='aboutpictures' class="row container abtdiv col m12 s12 center-block">
+      <div class="col m3 s6 abtpicdiv">
+        <img class='about-picture materialboxed center-block' src='images/profile.png' alt='profile' />
+      </div>
+      <div class="col m3 s6 abtpicdiv">
+        <img class='about-picture materialboxed center-block' src='images/dance.jpg' alt='dance' />
+      </div>
+      <div class="col m3 s6 abtpicdiv">
+        <img class='about-picture materialboxed center-block' src='images/code.png' alt='code' />
+      </div>
+      <div class="col m3 s6 abtpicdiv">
+        <img class='about-picture materialboxed center-block' src='images/controller.jpg' alt='controller' />
+      </div>
+    </div>
+  </div>
+  <div id='parallax-one' class="parallax-container">
+    <div class="parallax"><img class='parallaximg' src="images/spacer1.jpg"></div>
+  </div>
+  <div id='technology' class="section row valign-wrapper">
+    <div class="techdiv row col m4 push-m8 s12 valign">
+      <ul id='techanimation'>
+        <li class='techscroll'>
+          <h3 id='techtitle' class="header raleway center-align">Under The Hood</h3>
+        </li>
+        <li class='techscroll'>
+          <h6 id='techdescript' class="tealfont raleway center-align">Some of the technology that powers my projects</h6>
+        </li>
+      </ul>
+    </div>
+    <div id='techimgs' class="techdiv row col m8 pull-m4 s12 valign">
+      <div class='techrow row col s12 valign-wrapper'>
+        <div class='col s3 valign'>
+          <img class='techimg' src='images/logos.png' alt='logos' />
+        </div>
+        <div class='col s3 valign'>
+          <img class='techimg' src='images/Python.png' alt='python' />
+        </div>
+        <div class='col s3 valign'>
+          <img class='techimg' src='images/node.png' alt='node' />
+        </div>
+        <div class='col s3 valign'>
+          <img class='techimg' src='images/angular.png' alt='angular' />
+        </div>
+      </div>
+      <div class='techrow row container col s12 valign-wrapper'>
+        <div class='col s3 valign'>
+          <img class='techimg' src='images/swift.png' alt='swift' />
+        </div>
+        <div class='col s3 valign'>
+          <img class='techimg' src='images/xcode.png' alt='xcode' />
+        </div>
+        <div class='col s3 valign'>
+          <img class='techimg' src='images/django.png' alt='django' />
+        </div>
+        <div class='col s3 valign'>
+          <img class='techimg' src='images/socket.png' alt='socket' />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id='parallax-two' class="parallax-container">
+    <div class="parallax"><img class='parallaximg' src="images/spacer2.jpg"></div>
+  </div>
+  <div id='projects' class='container'>
+    <div class='row col s12 center-align'>
+      <h2 id='projecttitle' class='header raleway'>Projects</h2>
+      <ul id='projtitleanimation'>
+        <li class='projtitlescroll'>
+          <p id='projectdescript' class='raleway tealfont'>
+            Passionate for creating amazing products
+          </p>
+        </li>
+      </ul>
+    </div>
+    <ul id='getoutanimation'>
+      <li class='projscroll'>
+        <div id='getout' class='row col s12'>
+          <div class='row col s12'>
+            <h3 class='tealfont raleway projtitle'>Get Out</h3>
+          </div>
+          <div class='projdiv row col m6 s12'>
+
+            <p class='raleway projtext'>
+              Built With: Python | Flask | Pylot | Google Maps/Directions API | Open Weather API
+            </p>
+            <p class='raleway projtext'>
+              A web app designed to help you plan out activities around a chosen location. Plots nearby requested activities or restaurants and saves them to an itinerary for later. Final plans display routes based on the order of the itinerary.
+            </p>
+            <div class='row'>
+              <div class='col s3'>
+                <a href='https://github.com/kakuuuuuu/dayplanner' target='_blank'><img class='project-link' src=images/github.png alt='github' /></a>
+                <p class='project-link-label blue-grey-font center-align'>GitHub</p>
+              </div>
+            </div>
+          </div>
+          <div class='projdiv container row col m6 s12 valign-wrapper'>
+            <img class='projgif valign materialboxed' src='images/getout.gif' alt='getout' />
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul id='forgeanimation'>
+      <li class='projscroll'>
+        <div id='forge' class='row col s12'>
+          <div class='row col s12'>
+            <h3 class='tealfont raleway projtitle'>Forge</h3>
+          </div>
+          <div class='projdiv row col m6 s12'>
+            <p class='raleway projtext'>
+              Built With: JavaScript | Node.js, Express.js | Angular.js | Twitch API | Passport | Amazon Product Advertising API
+            </p>
+            <p class='raleway projtext'>
+              Previews games that you're interested in with the top available Twitch streamer and matching Amazon product listings.
+            </p>
+            <div class='row'>
+              <div class='col s3'>
+                <a href='https://github.com/kakuuuuuu/forge' target='_blank'><img class='project-link' src=images/github.png alt='github' /></a>
+                <p class='project-link-label blue-grey-font center-align'>
+                  GitHub
+                </p>
+              </div>
+              <div class='col s3'>
+                <a href='http://leforge.co' target='_blank'><img class='project-link' src='images/www.png' alt='www' /></a>
+                <p class='project-link-label blue-grey-font center-align'>
+                  Demo
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class='projdiv container row col m6 s12 valign-wrapper'>
+            <img class='projgif valign materialboxed' src='images/forge.gif' alt='forge' />
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul id='mapshareanimation'>
+      <li class='projscroll'>
+        <div id='mapshare' class='row col s12'>
+          <div class='row col s12'>
+            <h3 class='tealfont raleway projtitle'>Map Share</h3>
+          </div>
+          <div class='projdiv row col m6 s12'>
+
+            <p class='raleway projtext'>
+              Built With: JavaScript | Node.js, Express.js | Angular.js | Google Maps/Directions API | Socket.io
+            </p>
+            <p class='raleway projtext'>
+              Designed to simplify meet ups with friends. Users can share the destination live and plot a unique direct route based on each invited users' current location.        </p>
+            <div class='row'>
+              <div class='col s3'>
+                <a href='https://github.com/kakuuuuuu/MapServer' target='_blank'><img class='project-link' src='images/github.png' alt='github' /></a>
+                <p class='project-link-label blue-grey-font center-align'>
+                  GitHub
+                </p>
+              </div>
+              <div class='col s3'>
+                <a href='http://mapshare.co' target='_blank'><img class='project-link' src='images/www.png' alt='www' /></a>
+                <p class='project-link-label blue-grey-font center-align'>
+                  Demo
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class='projdiv container row col m6 s12 valign-wrapper'>
+            <img class='projgif valign materialboxed' src='images/mapshare.gif' alt='mapshare' />
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul id='iosanimation'>
+      <li class='projscroll'>
+        <div id='mapios' class='row col s12'>
+          <div class='row col s12'>
+            <h3 class='tealfont raleway projtitle'>Map Share (iOS)</h3>
+          </div>
+          <div class='projdiv row col m6 s12'>
+            <p class='raleway projtext'>
+              Built With: Swift | MapKit | Alamofire | Socket.io
+            </p>
+            <p class='raleway projtext'>
+              Companion app to the web version of Map Share. Shares all functionality and interactivity with the web version as well as being able to provide step-by-step directions using the built in Maps app.
+            </p>
+            <div class='row'>
+              <div class='col s3'>
+                <a href='https://github.com/kakuuuuuu/Map-Share' target='_blank'><img class='project-link waves-effect waves-light' src='images/github.png' alt='github' /></a>
+                <p class='project-link-label blue-grey-font center-align'>
+                  GitHub
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class='projdiv container row col m6 s12 valign-wrapper'>
+            <div class='col s6'>
+              <img class='iosimg materialboxed' src='images/iosmockup.png' alt='iosmapshare' />
+            </div>
+            <div class='col s6'>
+              <img class='iosimg materialboxed' src='images/iosmockup2.png' alt='iosmapshare' />
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id='parallax-three' class="parallax-container">
+    <div class="parallax"><img class='parallaximg' src="images/spacer3.jpg"></div>
+  </div>
+  <div id='contact' class='section row container'>
+    <div class='col s12 row'>
+      <h2 class='header raleway center-align'>Contact Me</h2>
+      <h5 class='raleway center-align'></h5>
+    </div>
+    <div id='contactimgs' class='col s12 container row'>
+      <div class='row col m6 s12'>
+        <div class="contactdiv col s4">
+          <a href='mailto:kt.fremont@gmail.com' class='contactlink' target='_blank'><img class='contactimg center-block' src='images/email.png' alt='mail' />
+            <p class='blue-grey-font contact-label center-align'>Email</p></a>
+        </div>
+        <div class="contactdiv col s4">
+          <a href='https://linkedin.com/in/kyle-tsuyemura' class='contactlink' target='_blank'><img class='contactimg center-block' src='images/linkedin.png' alt='linkedin' />
+            <p class='blue-grey-font contact-label center-align'>LinkedIn</p></a>
+        </div>
+        <div class="contactdiv col s4">
+          <a href='https://github.com/kakuuuuuu' class='contactlink' target='_blank'><img class='contactimg center-block' src='images/github.png' alt='github' />
+            <p class='blue-grey-font contact-label center-align'>GitHub</p></a>
+        </div>
+      </div>
+      <div class='row col m6 s12'>
+        <div class="contactdiv col s4">
+          <a href='https://soundcloud.com/kakuuuuuuu' class='contactlink' target='_blank'><img class='contactimg center-block' src='images/soundcloud.png' alt='soundcloud' />
+            <p class='blue-grey-font contact-label center-align'>SoundCloud</p></a>
+        </div>
+        <div class="contactdiv col s4">
+          <a href='https://www.youtube.com/channel/UCLfqas3JNBp3BoXEbJb3iYg' class='contactlink' target='_blank'><img class='contactimg center-block' src='images/youtube.png' alt='youtube' />
+            <p class='blue-grey-font contact-label center-align'>Youtube</p></a>
+        </div>
+        <div class="contactdiv col s4">
+          <a href='https://www.dropbox.com/s/jnjv0var5ajloup/Resume.pdf?dl=0' class='contactlink' target='_blank'><img class='contactimg center-block' src='images/dropbox.png' alt='dropbox' />
+            <p class='blue-grey-font contact-label center-align'>Resume</p></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </body>
+  </html>
