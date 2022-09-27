@@ -98,7 +98,7 @@ background-color: #333;
 /* ************ user home ************ */
 
 .homebanner {
-    background-image: url("/Images/HomeBanner.jpeg");
+    background-image: url(".\banner2.jpg");
     height: 30rem;
     background-position: center;
     background-repeat: no-repeat;
@@ -106,7 +106,7 @@ background-color: #333;
 }
 
 .mainbanner {
-    background-image: url("/Images/HomeBanner.jpeg");
+    background-image: url(".\banner.jpg");
     height: 30rem;
     background-position: center;
     background-repeat: no-repeat;
@@ -125,14 +125,14 @@ background-color: #333;
 
 /* ************ show all ************ */
 
-.bookicons {
+.movieicons {
     margin: 1rem;
 }
 
 
-/* ************ add book ************ */
+/* ************ add movie ************ */
 
-.newbook {
+.newmovie {
     color:white;
     margin-left: 5%;
     /* margin-top: 5%;
@@ -140,7 +140,7 @@ background-color: #333;
 }
 
 .addimg {
-    background-image: url("/Images/BookMountains.jpeg");
+    background-image: url(".\film2.jpg");
     /* height: 100%; */
     background-position: center;
     background-repeat: no-repeat;
@@ -152,7 +152,7 @@ background-color: #333;
     margin-top: 20%;
 }
 
-/* ************ show individual book ************ */
+/* ************ show individual movie ************ */
 
 /* Carousel base class */
 .carousel {

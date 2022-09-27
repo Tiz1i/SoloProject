@@ -25,12 +25,12 @@
         @foreach(Movie b in Model) // i gjithe ky cikli ketu shton butonin delete per cdo film dhe kjo vlen vetem per adminin
         {
             <tr>
-                <td><a href="/movie/@b.MovieId">@b.Title</a></td>
-                <td>@b.Author</td>
+                <td style="color: white;"><a href="/movie/@b.MovieId">@b.Title</a></td>
+                <td style="color: white;">@b.Author</td>
                 @* <td>@b.Description</td> *@
-                <td>@b.Adder.Firstname</td>
-                <td>@b.Members.Count</td>
-                <td>
+                <td style="color: white;">@b.Adder.Firstname</td>
+                <td style="color: white;">@b.Members.Count</td>
+                <td style="color: white;" >
                     <a class="btn btn-warning btn-sm" href="/movie/@b.MovieId/delete">Delete</a>
                 </td>
             </tr>

@@ -30,7 +30,7 @@
                 @foreach (var item in ViewBag.AllMovies){
                     <div class="col col-md-4 p-5">
                         <h3>@item.name</h3>
-                        <p>@item.summary</p>
+                        @item.summary
                         <img src=@item.image.medium alt="No image from api" width="100%" height="auto">
                     </div>
                 }
@@ -39,7 +39,7 @@
                     @foreach (var item in ViewBag.Season2){
                     <div class="col col-md-4 p-5">
                         <h3>@item.name</h3>
-                        <p>@item.summary</p>
+                        @item.summary
                         <img src=@item.image.medium alt="No image from api" width="100%" height="auto">
                     </div>
                     }
@@ -49,7 +49,7 @@
                     @foreach (var item in ViewBag.Season3){
                         <div class="col col-md-4 p-5">
                             <h3>@item.name </h3>
-                            <p>@item.summary</p>
+                            @item.summary
                             <img src=@item.image.medium alt="No image from api" width="100%" height="auto">
                         </div>
                     }
