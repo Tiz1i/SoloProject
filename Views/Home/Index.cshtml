@@ -15,19 +15,23 @@
     <div class="container">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="category-tab" data-bs-toggle="tab" data-bs-target="#season1" type="button" role="tab" aria-controls="category" aria-selected="true">All Movies</button>
+                <button class="nav-link active" id="category-tab" data-bs-toggle="tab" data-bs-target="#season1"
+                    type="button" role="tab" aria-controls="category" aria-selected="true">All Movies</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="recent-movies-tab" data-bs-toggle="tab" data-bs-target="#season2" type="button" role="tab" aria-controls="recent-movies" aria-selected="false">Batman Movies</button>
+                <button class="nav-link" id="recent-movies-tab" data-bs-toggle="tab" data-bs-target="#season2"
+                    type="button" role="tab" aria-controls="recent-movies" aria-selected="false">Batman Movies</button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link" id="top-rated-tab" data-bs-toggle="tab" data-bs-target="#season3" type="button" role="tab" aria-controls="top-rated" aria-selected="false">Star Wars</button>
+                <button class="nav-link" id="top-rated-tab" data-bs-toggle="tab" data-bs-target="#season3" type="button"
+                    role="tab" aria-controls="top-rated" aria-selected="false">Star Wars</button>
             </li>
         </ul>
 
         <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade show active " id="season1" role="tabpanel" aria-labelledby="category-tab">
-                @foreach (var item in ViewBag.AllMovies){
+                @foreach (var item in ViewBag.AllMovies)
+                {
                     <div class="col col-md-4 p-5">
                         <h3>@item.name</h3>
                         @item.summary
@@ -35,26 +39,28 @@
                     </div>
                 }
             </div>
-                <div class="tab-pane fade show active" id="season2" role="tabpanel" aria-labelledby="category-tab">
-                    @foreach (var item in ViewBag.Season2){
+            <div class="tab-pane fade show active" id="season2" role="tabpanel" aria-labelledby="category-tab">
+                @foreach (var item in ViewBag.Season2)
+                {
                     <div class="col col-md-4 p-5">
                         <h3>@item.name</h3>
                         @item.summary
                         <img src=@item.image.medium alt="No image from api" width="100%" height="auto">
                     </div>
-                    }
-                </div>
-            
-                <div class="tab-pane fade show active" id="season3" role="tabpanel" aria-labelledby="category-tab">
-                    @foreach (var item in ViewBag.Season3){
-                        <div class="col col-md-4 p-5">
-                            <h3>@item.name </h3>
-                            @item.summary
-                            <img src=@item.image.medium alt="No image from api" width="100%" height="auto">
-                        </div>
-                    }
-                    
-                </div>
+                }
+            </div>
+
+            <div class="tab-pane fade show active" id="season3" role="tabpanel" aria-labelledby="category-tab">
+                @foreach (var item in ViewBag.Season3)
+                {
+                    <div class="col col-md-4 p-5">
+                        <h3>@item.name </h3>
+                        @item.summary
+                        <img src=@item.image.medium alt="No image from api" width="100%" height="auto">
+                    </div>
+                }
+
+            </div>
         </div>
     </div>
 </div>
@@ -64,15 +70,18 @@
         <div class="row">
             <div class="col-lg-4">
                 <h4>Add Moives</h4>
-                <p>Click the Start Here button to lead you into a login/registration page. There is a set login username/password: See next paragraph for more info.</p>
+                <p>Click the Start Here button to lead you into a login/registration page. There is a set login
+                    username/password: See next paragraph for more info.</p>
             </div>
             <div class="col-lg-4">
                 <h4>Discuss</h4>
-                <p>This is the information for the next page. <br> The username is: <b>ticimalko@ymail.com</b> <br> The password is: <b>Hello2022!</b></p>
+                <p>This is the information for the next page. <br> The username is: <b>ticimalko@ymail.com</b> <br> The
+                    password is: <b>Hello2022!</b></p>
             </div>
             <div class="col-lg-4">
                 <h4>Stay Organized</h4>
-                <p>Have a look around! If there are any suggestions or recommendations please feel free to leave them on the discussion/message board. Have fun!</p>
+                <p>Have a look around! If there are any suggestions or recommendations please feel free to leave them on
+                    the discussion/message board. Have fun!</p>
             </div>
         </div>
     </div>

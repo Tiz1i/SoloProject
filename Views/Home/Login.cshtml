@@ -1,8 +1,8 @@
 @model LoginUser
 
-<link rel="stylesheet" href="~/css/style.css"/>
+<link rel="stylesheet" href="~/css/style.css" />
 
-<div class="logo border-bottom"> 
+<div class="logo border-bottom">
     <h1><a href="/"><img src=".\film3.jpg" style="height: 120px" alt="TheMovieTime Logo"></a>TheMovieTime</h1>
 </div>
 
@@ -15,11 +15,11 @@
         <div class="row">
             <div class="col-md-11">
                 <div class="form-group">
-                    <input asp-for="LoginEmail" class="form-control" placeholder="Email"/>
+                    <input asp-for="LoginEmail" class="form-control" placeholder="Email" />
                     <span asp-validation-for="LoginEmail" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input asp-for="LoginPassword" class="form-control" placeholder="Password"/>
+                    <input asp-for="LoginPassword" class="form-control" placeholder="Password" />
                     <span asp-validation-for="LoginPassword" class="text-danger"></span>
                 </div>
                 <div class="logbutton">
@@ -31,6 +31,3 @@
     <p class="mt-5">Don't have an account?</p>
     <a href="register" class="btn btn-outline-info btn-block col-md-11 mb-5">SIGN UP FOR THEMOVIETIME</a>
 </div>
-
-
-

@@ -1,23 +1,25 @@
-<link rel="stylesheet" href="~/css/style.css"/>
+<link rel="stylesheet" href="~/css/style.css" />
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <span class="navbar-brand mb-0 h1">TheMovieTime</span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/logout" tabindex="-1">Logout</a>
-        </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout" tabindex="-1">Logout</a>
+            </li>
         </ul>
         @* searchbar form (q) *@
         <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search" aria-label="Search for a Movie">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" name="q" type="search" placeholder="Search"
+                aria-label="Search for a Movie">
+            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
 </nav>
@@ -42,32 +44,35 @@
 
 <div class="allmain" style="margin-left: 5%; display: inline-block;">
     <div class="row">
-        
-        @foreach(Movie b in Model)
+
+        @foreach (Movie b in Model)
         {
-        <div class="m-3">
-            <div class="card shadow-sm">
-                <a href="/movie/@b.MovieId"><img src="@b.ImgUrl" width="200" height="250"  class="movieicons border border-light"  alt="@b.Title"></a>
-                @* <img src="@b.ImgUrl" class="img-thumbnail" alt="@b.Title"> *@
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a href="/movie/@b.MovieId" class="btn btn-sm btn-outline-secondary">View</a>
-                            
-                            @if(b.Members.Any( w => w.UserId == ViewBag.User.UserId))
-                            {
-                                <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty" asp-route-movieId="@b.MovieId" asp-route-status="remove">Remove</a>
-                            }
-                            else
-                            {
-                                <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty" asp-route-movieId="@b.MovieId" asp-route-status="add">Add</a>
-                            }
+            <div class="m-3">
+                <div class="card shadow-sm">
+                    <a href="/movie/@b.MovieId"><img src="@b.ImgUrl" width="200" height="250"
+                        class="movieicons border border-light" alt="@b.Title"></a>
+                    @* <img src="@b.ImgUrl" class="img-thumbnail" alt="@b.Title"> *@
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="/movie/@b.MovieId" class="btn btn-sm btn-outline-secondary">View</a>
+
+                                @if (b.Members.Any(w => w.UserId == ViewBag.User.UserId))
+                                {
+                                    <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty"
+                                asp-route-movieId="@b.MovieId" asp-route-status="remove">Remove</a>
+                                }
+                                else
+                                {
+                                    <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty"
+                                asp-route-movieId="@b.MovieId" asp-route-status="add">Add</a>
+                                }
+                            </div>
+                            <small class="text-muted">Added: @b.CreatedAt.ToShortDateString()</small>
                         </div>
-                        <small class="text-muted">Added: @b.CreatedAt.ToShortDateString()</small>
                     </div>
                 </div>
             </div>
-        </div>
-        }    
+        }
     </div>
 </div>

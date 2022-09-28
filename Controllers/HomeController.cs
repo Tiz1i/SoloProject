@@ -28,16 +28,17 @@ public class HomeController : Controller
         return _context.Users.FirstOrDefault(u => u.UserId == HttpContext.Session.GetInt32("userId"));
     }
     [HttpGet("")]
-    public async Task<IActionResult>  Index(){
+    public async Task<IActionResult> Index()
+    {
         //kam marre me Json api, kam krijuar metoden dhe kerkesen per klientin bashke me pergjigjen, 
         // Ku presim (await) per pergjigjen me ane te metodes asinkron.
         //i gjithe ky proces ruhet me viewbag per t'u bere lidhja me frontend.
-        var client = new HttpClient();    
+        var client = new HttpClient();
         var request1 = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
             RequestUri = new Uri("https://api.tvmaze.com/seasons/1/episodes"),
-            
+
         };
         using (var response1 = await client.SendAsync(request1))
         {
@@ -49,12 +50,12 @@ public class HomeController : Controller
             root = JsonSerializer.Deserialize<List<Root>>(body1);
 
             ViewBag.AllMovies = root;
-        }       
+        }
         var request2 = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
             RequestUri = new Uri("https://api.tvmaze.com/seasons/3/episodes"),
-            
+
         };
 
         using (var response2 = await client.SendAsync(request2))
@@ -67,13 +68,13 @@ public class HomeController : Controller
             root = JsonSerializer.Deserialize<List<Root>>(body2);
 
             ViewBag.Season2 = root;
-        }       
+        }
 
         var request3 = new HttpRequestMessage
         {
             Method = HttpMethod.Get,
             RequestUri = new Uri("https://api.tvmaze.com/seasons/4/episodes"),
-            
+
         };
 
         using (var response3 = await client.SendAsync(request3))
@@ -85,7 +86,7 @@ public class HomeController : Controller
             // string jsonString = JsonSerializer.Serialize(body);
             root = JsonSerializer.Deserialize<List<Root>>(body3);
             ViewBag.Season3 = root;
-        }  
+        }
         return View();
     }
 
@@ -109,7 +110,7 @@ public class HomeController : Controller
             }
             //verifikojme passwordin e Hash
             var result = logHasher.VerifyHashedPassword(lu, userInDB.Password, lu.LoginPassword);
-            if (result == 0) 
+            if (result == 0)
             {
                 ModelState.AddModelError("LoginPassword", "Invalid Email or Password");
                 return View("Login");
@@ -118,14 +119,15 @@ public class HomeController : Controller
             if (userInDB.UserAdmin == 1)
             {
                 //pra nese futet useri nuk hapet admini, nese futet admini, hapet
-            HttpContext.Session.SetInt32("userId", userInDB.UserId);
-            return Redirect("Adminhome");//me dergo ne faqen adminhome
+                HttpContext.Session.SetInt32("userId", userInDB.UserId);
+                return Redirect("Adminhome");//me dergo ne faqen adminhome
             }
-            else{//ne te kundert me co ne faqen home si user
+            else
+            {//ne te kundert me co ne faqen home si user
                 HttpContext.Session.SetInt32("userId", userInDB.UserId);
                 return Redirect("home");
             }
-        
+
         }
         return View("Login");
     }
@@ -165,7 +167,7 @@ public class HomeController : Controller
             _context.SaveChanges();
             HttpContext.Session.SetInt32("userId", u.UserId);
             return Redirect("Home");
-         }
+        }
         return View("Register");
     }
 
@@ -336,7 +338,8 @@ public class HomeController : Controller
         newMessage.UserId = current.UserId;
         newMessage.MovieId = movieId;
         _context.Messages.Add(newMessage);
-        if(!(newMessage.Content == null)){
+        if (!(newMessage.Content == null))
+        {
             _context.SaveChanges();
             List<Message> Messages = _context.Messages
                         .Include(m => m.Creator)
@@ -344,8 +347,8 @@ public class HomeController : Controller
                         .ThenInclude(c => c.Writer)
                         .OrderBy(m => m.CreatedAt)
                         .ToList();
-        ViewBag.Messages = Messages;
-        
+            ViewBag.Messages = Messages;
+
         }
         return Redirect($"/movie/{movieId}");
     }
@@ -478,10 +481,10 @@ public class HomeController : Controller
         {
             newmovie.UserId = current.UserId;
             _context.Movies.Add(newmovie);
-            _context.SaveChanges(); 
+            _context.SaveChanges();
             return RedirectToAction("Home");
         }
-       
+
         return View("NewMovie");
     }
 

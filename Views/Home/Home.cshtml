@@ -1,10 +1,11 @@
 @model List<Movie>
 
-<link rel="stylesheet" href="~/css/style.css"/>
+<link rel="stylesheet" href="~/css/style.css" />
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
     <span class="navbar-brand mb-0 h1">TheMovieTime</span>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,7 +21,8 @@
             </li>
         </ul>
         <form action="search" method="post" class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search for a Movie">
+            <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search"
+                aria-label="Search for a Movie">
             <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </form>
     </div>
@@ -38,7 +40,7 @@
         <p>
             <a href="/movies/all" class="btn btn-info">VIEW ALL MOVIES</a>
             <a href="/NewMovie" class="btn btn-info">ADD A MOVIE</a>
-            @if(ViewBag.User.UserAdmin == 1)
+            @if (ViewBag.User.UserAdmin == 1)
             {
                 <a href="adminhome" class="btn btn-warning">ADMIN HOME</a>
             }
@@ -49,48 +51,52 @@
 
 <div class="container marketing">
     <div class="row mt-5 mb-2">
-        @foreach(Movie b in Model)
+        @foreach (Movie b in Model)
         {
-        <div class="col-md-6">
-        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-            <div class="col p-4 d-flex flex-column position-static bg-white">
-                <strong class="d-inline-block mb-2 text-info">TRENDING NOW</strong>
-                <h4 class="mb-0">@b.Title</h4>
-            <div class="mb-1 text-muted">Added: @b.CreatedAt.ToShortDateString()</div>
-                <p class="card-text mb-auto">By: @b.Author</p>
+            <div class="col-md-6">
+                <div
+                class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col p-4 d-flex flex-column position-static bg-white">
+                        <strong class="d-inline-block mb-2 text-info">TRENDING NOW</strong>
+                        <h4 class="mb-0">@b.Title</h4>
+                        <div class="mb-1 text-muted">Added: @b.CreatedAt.ToShortDateString()</div>
+                        <p class="card-text mb-auto">By: @b.Author</p>
                         <div class="btn-group">
-                <a href="/movie/@b.MovieId" class="btn btn-sm btn-info">View</a> <!-- ne momentin qe shtypim view behet nje thirrje tjeter e cila ka sic paramet movied, ku mund te behen mesazhe, comente per kete film.-->
-                @if(b.Members.Any( w => w.UserId == ViewBag.User.UserId))
-                {//per cdo anetare ku userid eshte e barabarte me userin e loguar
-                    <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty" asp-route-movieId="@b.MovieId" asp-route-status="remove">Remove</a>
-                }
-                 else           
-                 @* kemi krijuar 2 butona remove dhe add sipas deshires qe mund te kete i loguari *@
-                {
-                    <a class="btn btn-sm btn-outline-info" asp-action="ToggleParty" asp-route-movieId="@b.MovieId" asp-route-status="add">Add</a>
-                }
+                            <a href="/movie/@b.MovieId" class="btn btn-sm btn-info">View</a>
+                            <!-- ne momentin qe shtypim view behet nje thirrje tjeter e cila ka sic paramet movied, ku mund te behen mesazhe, comente per kete film.-->
+                            @if (b.Members.Any(w => w.UserId == ViewBag.User.UserId))
+                            {//per cdo anetare ku userid eshte e barabarte me userin e loguar
+                                <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty"
+                            asp-route-movieId="@b.MovieId" asp-route-status="remove">Remove</a>
+                            }
+                            else
+                            @* kemi krijuar 2 butona remove dhe add sipas deshires qe mund te kete i loguari *@
+                            {
+                                <a class="btn btn-sm btn-outline-info" asp-action="ToggleParty" asp-route-movieId="@b.MovieId"
+                            asp-route-status="add">Add</a>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-auto d-none d-lg-block">
+                        <img src="@b.ImgUrl" width="200" height="250" width="100%" height="100%" alt="@b.Title">
+                    </div>
+                </div>
             </div>
-            </div>
-            <div class="col-auto d-none d-lg-block">
-                <img src="@b.ImgUrl" width="200" height="250" width="100%" height="100%"  alt="@b.Title">
-            </div> 
-        </div>
-        </div>
         }
     </div>
 
     <h3 class="pb-4 mb-4 border-bottom text-white">WHAT'S ON YOUR LIST:</h3>
-        @if(@ViewBag.MyFaves.Count == 0)
+    @if (@ViewBag.MyFaves.Count == 0)
+    {
+        <div class="text-white ">
+            <h5>You haven't favorited any movies yet..</h5>
+            <p>Add a movie to get started!</p>
+        </div>
+    }
+    else
+    {
+        @foreach (Movie b in ViewBag.MyFaves)
         {
-            <div class="text-white ">
-                <h5>You haven't favorited any movies yet..</h5>
-                <p>Add a movie to get started!</p>
-            </div>
-        }
-        else
-        {
-            @foreach(Movie b in ViewBag.MyFaves)
-            {
 
             <div class="col-md-4" style="display: inline-block">
                 <div class="card mb-4 shadow-sm">
@@ -101,13 +107,15 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="/movie/@b.MovieId" class="btn btn-sm btn-outline-secondary">View</a>
-                                @if(b.Members.Any( w => w.UserId == ViewBag.User.UserId))
+                                @if (b.Members.Any(w => w.UserId == ViewBag.User.UserId))
                                 {
-                                    <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty" asp-route-movieId="@b.MovieId" asp-route-status="remove">Remove</a>
+                                    <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty"
+                            asp-route-movieId="@b.MovieId" asp-route-status="remove">Remove</a>
                                 }
                                 else
                                 {
-                                    <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty" asp-route-movieId="@b.MovieId" asp-route-status="add">Add</a>
+                                    <a class="btn btn-sm btn-outline-secondary" asp-action="ToggleParty"
+                            asp-route-movieId="@b.MovieId" asp-route-status="add">Add</a>
                                 }
                             </div>
                             <small class="text-muted">Added: @b.CreatedAt.ToShortDateString()</small>
@@ -115,8 +123,6 @@
                     </div>
                 </div>
             </div>
-            }
-        }    
+        }
+    }
 </div>
-
-
