@@ -29,7 +29,9 @@ public class HomeController : Controller
     }
     [HttpGet("")]
     public async Task<IActionResult>  Index(){
-                
+        //kam marre me Json api, kam krijuar metoden dhe kerkesen per klientin bashke me pergjigjen, 
+        // Ku presim (await) per pergjigjen me ane te metodes asinkron.
+        //i gjithe ky proces ruhet me viewbag per t'u bere lidhja me frontend.
         var client = new HttpClient();    
         var request1 = new HttpRequestMessage
         {
@@ -98,14 +100,16 @@ public class HomeController : Controller
     {
         if (ModelState.IsValid)
         {
+            //kam bere kontrollin e validimit
             User userInDB = _context.Users.FirstOrDefault(u => u.Email == lu.LoginEmail);
-            if (userInDB == null)
+            if (userInDB == null)//nese useri eshte null, nxirr errorin
             {
                 ModelState.AddModelError("LoginEmail", "Invalid Email or Password");
                 return View("Login");
             }
+            //verifikojme passwordin e Hash
             var result = logHasher.VerifyHashedPassword(lu, userInDB.Password, lu.LoginPassword);
-            if (result == 0)
+            if (result == 0) 
             {
                 ModelState.AddModelError("LoginPassword", "Invalid Email or Password");
                 return View("Login");
